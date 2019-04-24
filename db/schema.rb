@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_161307) do
   create_table "characters", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.integer "class_id"
+    t.integer "klass_id"
     t.integer "race_id"
     t.integer "armor_class"
     t.integer "initiative"
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 2019_04_23_161307) do
     t.integer "proficiency_bonus"
     t.integer "max_hp"
     t.integer "current_hp"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_161307) do
   create_table "klasses", force: :cascade do |t|
     t.string "name"
     t.string "api_url"
+    t.integer "hit_die"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

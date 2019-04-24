@@ -8,18 +8,18 @@
 
 user1 = User.create(username: "user1")
 
-class1 = Klass.create(name: "Barbarian", api_url: "http://www.dnd5eapi.co/api/classes/1")
-class2 = Klass.create(name: "Bard", api_url: "http://www.dnd5eapi.co/api/classes/2")
-class3 = Klass.create(name: "Cleric", api_url: "http://www.dnd5eapi.co/api/classes/3")
-class4 = Klass.create(name: "Druid", api_url: "http://www.dnd5eapi.co/api/classes/4")
-class5 = Klass.create(name: "Fighter", api_url: "http://www.dnd5eapi.co/api/classes/5")
-class6 = Klass.create(name: "Monk", api_url: "http://www.dnd5eapi.co/api/classes/6")
-class7 = Klass.create(name: "Paladin", api_url: "http://www.dnd5eapi.co/api/classes/7")
-class8 = Klass.create(name: "Ranger", api_url: "http://www.dnd5eapi.co/api/classes/8")
-class9 = Klass.create(name: "Rogue", api_url: "http://www.dnd5eapi.co/api/classes/9")
-class10 = Klass.create(name: "Sorcerer", api_url: "http://www.dnd5eapi.co/api/classes/10")
-class11 = Klass.create(name: "Warlock", api_url: "http://www.dnd5eapi.co/api/classes/11")
-class12 = Klass.create(name: "Wizard", api_url: "http://www.dnd5eapi.co/api/classes/12")
+class1 = Klass.create(name: "Barbarian", api_url: "http://www.dnd5eapi.co/api/classes/1", hit_die: 12)
+class2 = Klass.create(name: "Bard", api_url: "http://www.dnd5eapi.co/api/classes/2", hit_die: 8)
+class3 = Klass.create(name: "Cleric", api_url: "http://www.dnd5eapi.co/api/classes/3", hit_die: 8)
+class4 = Klass.create(name: "Druid", api_url: "http://www.dnd5eapi.co/api/classes/4", hit_die: 8)
+class5 = Klass.create(name: "Fighter", api_url: "http://www.dnd5eapi.co/api/classes/5", hit_die: 10)
+class6 = Klass.create(name: "Monk", api_url: "http://www.dnd5eapi.co/api/classes/6", hit_die: 8)
+class7 = Klass.create(name: "Paladin", api_url: "http://www.dnd5eapi.co/api/classes/7", hit_die: 10)
+class8 = Klass.create(name: "Ranger", api_url: "http://www.dnd5eapi.co/api/classes/8", hit_die: 10)
+class9 = Klass.create(name: "Rogue", api_url: "http://www.dnd5eapi.co/api/classes/9", hit_die: 8)
+class10 = Klass.create(name: "Sorcerer", api_url: "http://www.dnd5eapi.co/api/classes/10", hit_die: 6)
+class11 = Klass.create(name: "Warlock", api_url: "http://www.dnd5eapi.co/api/classes/11", hit_die: 8)
+class12 = Klass.create(name: "Wizard", api_url: "http://www.dnd5eapi.co/api/classes/12", hit_die: 6)
 
 Race.create(name: "Dwarf", api_url: "http://www.dnd5eapi.co/api/races/1", speed: 30)
 Race.create(name: "Elf", api_url: "http://www.dnd5eapi.co/api/races/2", speed: 30)
@@ -35,7 +35,7 @@ Race.create(name: "Tiefling", api_url: "http://www.dnd5eapi.co/api/races/9", spe
 Character.create(
   user_id: 1,
   name: "Blarg The Hobo-Warrior",
-  class_id: 5,
+  klass_id: 5,
   race_id: 1,
   armor_class: 0,
   initiative: 0,
@@ -43,13 +43,35 @@ Character.create(
   alignment: "",
   level: 1,
   experience: 0,
-  proficiency_bonus: 2,
+  proficiency_bonus: 0,
   max_hp: 0,
   current_hp: 0,
-  strength: 0,
-  dexterity: 0,
-  constitution: 0,
-  intelligence: 0,
-  wisdom: 0,
-  charisma: 0
+  strength: 10,
+  dexterity: 10,
+  constitution: 10,
+  intelligence: 10,
+  wisdom: 10,
+  charisma: 10
+)
+
+Character.create(
+  user_id: 1,
+  name: "Dongol Schmav",
+  klass_id: 1,
+  race_id: 8,
+  armor_class: 0,
+  initiative: 0,
+  speed: 0,
+  alignment: "",
+  level: 1,
+  experience: 0,
+  proficiency_bonus: 0,
+  max_hp: 0,
+  current_hp: 0,
+  strength: 10,
+  dexterity: 10,
+  constitution: 10,
+  intelligence: 10,
+  wisdom: 10,
+  charisma: 10
 )

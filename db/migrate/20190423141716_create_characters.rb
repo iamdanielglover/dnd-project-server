@@ -3,7 +3,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
     create_table :characters do |t|
       t.integer :user_id
       t.string :name
-      t.integer :class_id
+      t.integer :klass_id
       t.integer :race_id
       t.integer :armor_class
       t.integer :initiative
