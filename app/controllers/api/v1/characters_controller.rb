@@ -20,7 +20,7 @@ class Api::V1::CharactersController < ApplicationController
       @character.save
       render json: @character
     else
-      render json: "Failed To Create Character"
+      render json: {error: "Failed To Create Character"}
     end
   end
 

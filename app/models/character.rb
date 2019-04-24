@@ -1,10 +1,26 @@
 class Character < ApplicationRecord
+  belongs_to :klass
+  belongs_to :race
+  belongs_to :user
+  has_many :character_proficiencies
+  has_many :proficiencies, through: :character_proficiencies
 
   def set_up
+    add_race_bonuses
     set_proficiency_bonus
     set_ac_and_initiative
     set_speed
     set_max_hp
+  end
+
+  def add_race_bonuses
+    race = Race.find {|race| race.id === self.race_id}
+    self.strength += race.strength_bonus
+    self.dexterity += race.dexterity_bonus
+    self.constitution += race.constitution_bonus
+    self.intelligence += race.intelligence_bonus
+    self.wisdom += race.wisdom_bonus
+    self.charisma += race.charisma_bonus
   end
 
   def set_proficiency_bonus
@@ -51,12 +67,12 @@ class Character < ApplicationRecord
   end
 
   def set_speed
-    race = Race.find {|race| race.id === Character.first.race_id}
+    race = Race.find {|race| race.id === self.race_id}
     self.speed = race.speed
   end
 
   def set_max_hp
-    klass = Klass.find {|klass| klass.id === Character.first.klass_id}
+    klass = Klass.find {|klass| klass.id === self.klass_id}
     if (self.constitution < 2)
       num = -5
     elsif (self.constitution < 4)

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :characters
       resources :klasses
+      resources :users
+      resources :races, only: [:index]
     end
   end
 end
