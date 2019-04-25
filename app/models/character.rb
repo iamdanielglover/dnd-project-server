@@ -74,15 +74,15 @@ class Character < ApplicationRecord
   def set_max_hp
     klass = Klass.find {|klass| klass.id === self.klass_id}
     if (self.constitution < 2)
-      num = -5
+      num = 0
     elsif (self.constitution < 4)
-      num = -4
+      num = 0
     elsif (self.constitution < 6)
-      num = -3
+      num = 0
     elsif (self.constitution < 8)
-      num = -2
+      num = 0
     elsif (self.constitution < 10)
-      num = -1
+      num = 0
     elsif (self.constitution < 12)
       num = 0
     elsif (self.constitution < 14)

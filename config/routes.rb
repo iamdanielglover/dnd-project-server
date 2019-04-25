@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :klasses
       resources :users
       resources :races, only: [:index]
+      resources :character_proficiencies, only: [:index, :create]
     end
   end
 end
