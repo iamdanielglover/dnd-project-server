@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   belongs_to :user
   has_many :character_proficiencies
   has_many :proficiencies, through: :character_proficiencies
+  validates :name, uniqueness: true
 
   def set_up
     add_race_bonuses
