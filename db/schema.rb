@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_183708) do
 
   create_table "proficiencies", force: :cascade do |t|
     t.string "name"
+    t.string "mod"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
