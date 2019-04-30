@@ -24,6 +24,29 @@ class Api::V1::CharactersController < ApplicationController
     end
   end
 
+  def update
+    @character = Character.find_by(id: params[:id])
+    @character.update(character_params)
+    @character.level_up
+    @character.save
+    if @character
+      render json: @character
+    else
+      render json: {error: "Update Failed"}
+    end
+  end
+
+  def destroy
+    @character = Character.find_by(id: params[:id])
+
+    if @character
+      @character.character
+      render json: @character
+    else
+      render json: {error: "Delete Failed"}
+    end
+  end
+
   private
 
   def character_params

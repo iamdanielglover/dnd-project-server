@@ -15,6 +15,13 @@ class Character < ApplicationRecord
     set_max_hp
   end
 
+  def level_up
+    set_level
+    set_proficiency_bonus
+    set_ac_and_initiative
+    set_max_hp
+  end
+
   def add_race_bonuses
     race = Race.find {|race| race.id === self.race_id}
     self.strength += race.strength_bonus
@@ -98,7 +105,7 @@ class Character < ApplicationRecord
     elsif (self.constitution > 19)
       num = 5
     end
-    self.max_hp = num + (klass.hit_die * self.level)
+    self.max_hp = (num + klass.hit_die) * self.level
     self.current_hp = self.max_hp
   end
 
