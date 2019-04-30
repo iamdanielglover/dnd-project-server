@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1 = User.create(username: "user1")
+user2 = User.create(username: "user2")
 
 class1 = Klass.create(name: "Barbarian", api_url: "http://www.dnd5eapi.co/api/classes/1", hit_die: 12)
 class2 = Klass.create(name: "Bard", api_url: "http://www.dnd5eapi.co/api/classes/2", hit_die: 8)

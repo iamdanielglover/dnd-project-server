@@ -16,7 +16,6 @@ class Character < ApplicationRecord
   end
 
   def level_up
-    # set_level
     set_proficiency_bonus
     set_ac_and_initiative
     set_max_hp
@@ -105,52 +104,52 @@ class Character < ApplicationRecord
     elsif (self.constitution > 19)
       num = 5
     end
-    self.max_hp = (num + klass.hit_die) * self.level
+    self.max_hp = ((num + klass.hit_die) * self.level) + (num + klass.hit_die)
     self.current_hp = self.max_hp
   end
 
-  # def set_level
-  #   if (self.experience < 300)
-  #     self.level = 1
-  #   elsif (self.experience < 900)
-  #     self.level = 2
-  #   elsif (self.experience < 2700)
-  #       self.level = 3
-  #   elsif (self.experience < 6500)
-  #       self.level = 4
-  #   elsif (self.experience < 14000)
-  #       self.level = 5
-  #   elsif (self.experience < 23000)
-  #       self.level = 6
-  #   elsif (self.experience < 34000)
-  #       self.level = 7
-  #   elsif (self.experience < 48000)
-  #       self.level = 8
-  #   elsif (self.experience < 64000)
-  #       self.level = 9
-  #   elsif (self.experience < 85000)
-  #       self.level = 10
-  #   elsif (self.experience < 100000)
-  #       self.level = 11
-  #   elsif (self.experience < 120000)
-  #       self.level = 12
-  #   elsif (self.experience < 140000)
-  #       self.level = 13
-  #   elsif (self.experience < 165000)
-  #       self.level = 14
-  #   elsif (self.experience < 195000)
-  #       self.level = 15
-  #   elsif (self.experience < 225000)
-  #       self.level = 16
-  #   elsif (self.experience < 265000)
-  #       self.level = 17
-  #   elsif (self.experience < 305000)
-  #       self.level = 18
-  #   elsif (self.experience < 355000)
-  #       self.level = 19
-  #   elsif (self.experience >= 355000)
-  #       self.level = 20
-  #   end
-  # end
+  def set_level
+    if (self.experience < 300)
+      self.level = 1
+    elsif (self.experience < 900)
+      self.level = 2
+    elsif (self.experience < 2700)
+        self.level = 3
+    elsif (self.experience < 6500)
+        self.level = 4
+    elsif (self.experience < 14000)
+        self.level = 5
+    elsif (self.experience < 23000)
+        self.level = 6
+    elsif (self.experience < 34000)
+        self.level = 7
+    elsif (self.experience < 48000)
+        self.level = 8
+    elsif (self.experience < 64000)
+        self.level = 9
+    elsif (self.experience < 85000)
+        self.level = 10
+    elsif (self.experience < 100000)
+        self.level = 11
+    elsif (self.experience < 120000)
+        self.level = 12
+    elsif (self.experience < 140000)
+        self.level = 13
+    elsif (self.experience < 165000)
+        self.level = 14
+    elsif (self.experience < 195000)
+        self.level = 15
+    elsif (self.experience < 225000)
+        self.level = 16
+    elsif (self.experience < 265000)
+        self.level = 17
+    elsif (self.experience < 305000)
+        self.level = 18
+    elsif (self.experience < 355000)
+        self.level = 19
+    elsif (self.experience >= 355000)
+        self.level = 20
+    end
+  end
 
 end
