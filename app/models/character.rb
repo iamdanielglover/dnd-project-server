@@ -2,6 +2,7 @@ class Character < ApplicationRecord
   belongs_to :klass
   belongs_to :race
   belongs_to :user
+  has_many :spells
   has_many :character_proficiencies
   has_many :proficiencies, through: :character_proficiencies
   validates :name, uniqueness: true

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :races, only: [:index]
       resources :character_proficiencies, only: [:index, :create]
       resources :proficiencies, only: [:index]
+      resources :spells, only: [:index, :show, :create]
 
       post "/login", to: "auth#login"
       get "/auto_login", to: "auth#get_current_user"

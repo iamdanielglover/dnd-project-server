@@ -19,6 +19,7 @@ class CharacterSerializer < ActiveModel::Serializer
               :intelligence,
               :wisdom,
               :charisma,
-              :proficiencies
+              :proficiencies,
+              :spells
 
 end
