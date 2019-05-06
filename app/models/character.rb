@@ -3,8 +3,13 @@ class Character < ApplicationRecord
   belongs_to :race
   belongs_to :user
   has_many :spells
+  has_many :weapons
   has_many :character_proficiencies
   has_many :proficiencies, through: :character_proficiencies
+  has_many :character_weapons
+  has_many :weapons, through: :character_weapons
+  has_many :character_armors
+  has_many :armors, through: :character_armors
   validates :name, uniqueness: true
 
   def set_up

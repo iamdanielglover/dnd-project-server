@@ -63,7 +63,9 @@ class Api::V1::CharactersController < ApplicationController
       :constitution,
       :intelligence,
       :wisdom,
-      :charisma
+      :charisma,
+      :current_weapon_id,
+      :current_armor_id,
     )
   end
 end

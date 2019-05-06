@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       resources :character_proficiencies, only: [:index, :create]
       resources :proficiencies, only: [:index]
       resources :spells, only: [:index, :show, :create]
+      resources :weapons, only: [:index, :show, :create]
+      resources :character_weapons
+      resources :armors
 
       post "/login", to: "auth#login"
       get "/auto_login", to: "auth#get_current_user"

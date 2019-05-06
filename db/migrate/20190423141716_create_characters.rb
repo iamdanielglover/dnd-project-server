@@ -20,7 +20,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer :intelligence
       t.integer :wisdom
       t.integer :charisma
-
+      t.integer :current_weapon_id
+      t.integer :current_armor_id
 
       t.timestamps
     end

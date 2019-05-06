@@ -19,7 +19,11 @@ class CharacterSerializer < ActiveModel::Serializer
               :intelligence,
               :wisdom,
               :charisma,
+              :current_weapon_id,
+              :current_armor_id,
               :proficiencies,
-              :spells
+              :spells,
+              :weapons,
+              :armors
 
 end

@@ -10,14 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_095412) do
+ActiveRecord::Schema.define(version: 2019_05_05_184347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "api_v1_character_armors", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "armor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "armors", force: :cascade do |t|
+    t.string "name"
+    t.integer "armor_class"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "character_armors", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "armor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "character_proficiencies", force: :cascade do |t|
     t.integer "character_id"
     t.integer "proficiency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "character_weapons", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "weapon_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +70,8 @@ ActiveRecord::Schema.define(version: 2019_05_02_095412) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
+    t.integer "current_weapon_id"
+    t.integer "current_armor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,6 +116,14 @@ ActiveRecord::Schema.define(version: 2019_05_02_095412) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string "name"
+    t.integer "attk_bonus"
+    t.string "damage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
