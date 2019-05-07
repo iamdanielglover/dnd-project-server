@@ -40,7 +40,7 @@ class Api::V1::CharactersController < ApplicationController
     @character = Character.find_by(id: params[:id])
 
     if @character
-      @character.character
+      @character.delete
       render json: @character
     else
       render json: {error: "Delete Failed"}

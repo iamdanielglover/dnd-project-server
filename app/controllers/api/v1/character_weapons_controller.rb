@@ -24,7 +24,12 @@ class Api::V1::CharacterWeaponsController < ApplicationController
 
   def delete
     @char_wep = CharacterWeapon.find_by(id: params[:id])
-    @char_wep.destroy
+    if @char_wep
+      @char_wep.destroy
+      render json: @char_wep
+    else
+      render json: {error: "Couldn't find item to Drop"}
+    end
   end
 
   private
