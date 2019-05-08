@@ -5,7 +5,7 @@ class Api::V1::CharacterWeaponsController < ApplicationController
   end
 
   def show
-    @char_wep = CharacterWeapon.find(params[:id])
+    @char_wep = CharacterWeapon.find_by(id: params[:id])
     if @char_wep
       render json: @char_wep
     else
@@ -22,10 +22,10 @@ class Api::V1::CharacterWeaponsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @char_wep = CharacterWeapon.find_by(id: params[:id])
     if @char_wep
-      @char_wep.destroy
+      @char_wep.delete
       render json: @char_wep
     else
       render json: {error: "Couldn't find item to Drop"}

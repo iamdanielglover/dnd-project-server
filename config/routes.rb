@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :races, only: [:index]
       resources :character_proficiencies, only: [:index, :create]
       resources :proficiencies, only: [:index]
-      resources :spells, only: [:index, :show, :create]
+      resources :spells
       resources :weapons, only: [:index, :show, :create]
       resources :character_weapons
       resources :armors

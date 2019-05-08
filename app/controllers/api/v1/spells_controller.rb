@@ -25,6 +25,17 @@ class Api::V1::SpellsController < ApplicationController
       end
   end
 
+  def destroy
+    @spell = Spell.find_by(id: params[:id])
+
+    if @spell
+      @spell.delete
+      render json: @spell
+    else
+      render json: {error: "Delete Failed"}
+    end
+  end
+
   private
 
   def spell_params
